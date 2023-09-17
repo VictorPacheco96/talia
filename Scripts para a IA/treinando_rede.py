@@ -2,10 +2,14 @@ import os #AJUDA A TRABALHAR COM PASTAS E ENDEREÇOS DE PASTA DO PRÓPRIO COMPUT
 import numpy as np #AJUDA A TRABALHAR COM DIFERENTES ARRAYS
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
+
+#Acessando a pasta raiz para poder importar a pasta "Functions"
+parent = os.path.realpath(__file__)
+sys.path.append(parent.replace('\\Scripts para a IA\\salva_pontos.py',''))
+
 import lista_gestos as lg
 
 # Coletando nomes dos gestos que cujo as imagens serão capturadas
-
 #DATA_PATH é uma pasta que vai guardar frames de amostras de gestos salvos como arrays do numpy
 DATA_PATH = os.path.join('Gestos') #Pasta que vai guardar todos os gestos
 actions = np.array(lg.lista_nomes) #Cada String aqui é uma pasta, que representa 1 sinal específico da LIBRAS
