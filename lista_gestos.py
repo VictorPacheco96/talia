@@ -18,7 +18,5 @@ lista_nomes = [
     "Seus"
 ]
 
-gestos = os.listdir(os.path.join('Gestos'))
-
-for gesto in gestos:
-    print(f'"{gesto}",')
+# PERTENCE + NÓS = NOSSO
+# NÓS + PERTENCE = NOSSO
