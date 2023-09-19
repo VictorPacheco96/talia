@@ -1,11 +1,12 @@
 import os #AJUDA A TRABALHAR COM PASTAS E ENDEREÇOS DE PASTA DO PRÓPRIO COMPUTADOR
+import sys
 import numpy as np #AJUDA A TRABALHAR COM DIFERENTES ARRAYS
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
 
 #Acessando a pasta raiz para poder importar a pasta "Functions"
 parent = os.path.realpath(__file__)
-sys.path.append(parent.replace('\\Scripts para a IA\\salva_pontos.py',''))
+sys.path.append(parent.replace('\\Scripts para a IA\\treinando_rede.py',''))
 
 import lista_gestos as lg
 
@@ -13,7 +14,7 @@ import lista_gestos as lg
 #DATA_PATH é uma pasta que vai guardar frames de amostras de gestos salvos como arrays do numpy
 DATA_PATH = os.path.join('Gestos') #Pasta que vai guardar todos os gestos
 actions = np.array(lg.lista_nomes) #Cada String aqui é uma pasta, que representa 1 sinal específico da LIBRAS
-no_sequences = 70 #Número de amostras por gesto
+no_sequences = 39 #Número de amostras por gesto
 sequence_length = 30 #Números de frames por amostra
 
 # Criando um mapa de gestos com index e valor
@@ -38,7 +39,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.1)
 
 #Salvando dados de treino
 if os.path.exists("Dados de teste") == False :
-    os.makedirs("")
+    os.makedirs("Dados de teste")
 npy_path = os.path.join("Dados de teste\\x_test")  # Pasta onde o frame será salvo
 np.save(npy_path, x_test)
 
