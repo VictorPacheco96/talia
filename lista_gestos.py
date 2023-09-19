@@ -68,6 +68,7 @@ lista_nomes = [
 # PERTENCE + NÓS = NOSSO
 # NÓS + PERTENCE = NOSSO
 
+#Use para gerar a lista com o nome dos gestos atuais
 #lista = os.path.join('Scripts para a IA/Gestos')
 
 #for a in os.listdir(lista) :
